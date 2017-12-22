@@ -19,7 +19,7 @@ namespace Scheduler.ScheduleStealer.Tests.Schedule
             var list = scheduleParser.ParseTable(htmlDocument, "1");
 
             Assert.That(list, Is.Not.Empty);
-            Assert.That(list.Count, Is.EqualTo(8));
+            Assert.That(list.Count, Is.EqualTo(15));
             Assert.That(list.All(i => i.Teacher != null && i.Subject != null), Is.True);
             Assert.That(list.All(i => i.Group == "1"), Is.True);
         }

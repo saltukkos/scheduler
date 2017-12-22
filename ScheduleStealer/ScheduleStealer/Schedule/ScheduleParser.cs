@@ -18,7 +18,7 @@ namespace Scheduler.ScheduleStealer.Schedule
             var result = new List<LessonInfo>();
 
             var lessonNumber = 0;
-            foreach (var htmlNode in node.ChildNodes.Where(x => x.Name == "tr").Skip(2))
+            foreach (var htmlNode in node.ChildNodes.Where(x => x.Name == "tr").Skip(1))
             {
                 result.AddRange(ParseLessons(htmlNode, ++lessonNumber, group));
             }
@@ -35,7 +35,7 @@ namespace Scheduler.ScheduleStealer.Schedule
             var time = htmlNodes[0].InnerText;
             var resultList = new List<LessonInfo>();
             var n = 1;
-            foreach (var node in htmlNodes.Skip(2))
+            foreach (var node in htmlNodes.Skip(1))
             {
                 var lesson = new LessonInfo
                 {
