@@ -40,7 +40,7 @@ namespace Scheduler.ScheduleStealer.Schedule
                 var lesson = new LessonInfo
                 {
                     Subject = node.ChildWithClass("subject")?.Attribute("title"),
-                    IsLecture = node.ChildWithClass("type")?.Attribute("title") == "лекция",
+                    IsLecture = node.ChildWithClass("type")?.Attribute("title")?.Equals("лекция", StringComparison.OrdinalIgnoreCase) == true,
                     Time = time,
                     Number = number,
                     WeekDay = n++,
