@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using HtmlAgilityPack;
@@ -11,6 +12,17 @@ namespace Scheduler.ScheduleStealer.Tests.Schedule
     [TestFixture]
     public class ScheduleUpdaterTests
     {
+        [Test]
+        public void FailToDownloadReturnNull()
+        {
+            var downloaderMock = new Mock<IWebDownloader>();
+            downloaderMock.Setup(d => d.GetLoadStream(It.IsAny<string>())).Throws<Exception>();
+
+            var scheduleUpdater = new ScheduleUpdater("", Mock.Of<IScheduleParser>(), downloaderMock.Object);
+            var result = scheduleUpdater.UpdateSchedule(new[] {""});
+            Assert.That(result, Is.Null);
+        }
+
         [Test]
         public void DownloadAllGroupsSchedule()
         {
