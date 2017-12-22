@@ -1,0 +1,31 @@
+.intervals {
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  padding: 3px 0;
+}
+
+.interval-list {
+  margin: auto;
+  width: 110px;
+}
+
+.interval {
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  border-bottom: none;
+  text-align: center;
+}
+
+.interval:last-child {
+  border-bottom: 1px solid black;
+}
+
+.interval:nth-of-type(2n+1) {
+  background-color: #e5e5e5;
+}
+
+button {
+  margin: auto;
+}

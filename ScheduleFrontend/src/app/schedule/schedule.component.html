@@ -1,0 +1,25 @@
+<nav>
+  <a href="#" title="Расписание ФИТ" rel="sidebar" class="nsu-logo"></a>
+  <div class="week-parity-selector" *ngIf="currentLessons">
+    Выбор недели:
+    <button class="week-parity-button" [disabled]="isOddWeek" (click)="selectWeekParity(true)">1</button>
+    <button class="week-parity-button" [disabled]="!isOddWeek" (click)="selectWeekParity(false)">2</button>
+  </div>
+</nav>
+<div class="schedule">
+  <div class="loading" [class.hidden]="!loading">
+    <md-spinner *ngIf="loading" [@enterAnimation]></md-spinner>
+  </div>
+  <div *ngFor="let schedDay of currentLessons; let i = index" class="day">
+    <span class="weekday">{{convertWeekdayToWord(i)}}</span>
+    <div class="items">
+      <div *ngFor="let schedItem of schedDay; let j = index" class="item"
+           [class.special]="schedItem && schedItem.Special" [@enterAnimation]>
+        <app-lesson [item]="schedItem" [index]="j">
+        </app-lesson>
+      </div>
+    </div>
+  </div>
+</div>
+<app-intervals></app-intervals>
+<app-students-list [selectedStudentName]="selectedStudentName"></app-students-list>

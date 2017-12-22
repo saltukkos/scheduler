@@ -1,0 +1,14 @@
+div {
+  background-color: #555555;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+}
+
+a {
+  color: white;
+}
+
+a:hover, a:focus {
+  color: gainsboro;
+}

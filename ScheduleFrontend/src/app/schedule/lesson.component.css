@@ -1,0 +1,40 @@
+.item {
+  border: 1px solid #717171;
+  border-bottom: none;
+  height: 35px;
+  padding: 0 4px;
+  line-height: 35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item-info {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.subj-name {
+  display: inline-block;
+  width: calc(100% - 70px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info {
+  float: right;
+}
+
+.lecture {
+  font-weight: 700;
+}
+
+.teacher {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url(../../assets/teacher.png) no-repeat;
+  vertical-align: text-bottom;
+}

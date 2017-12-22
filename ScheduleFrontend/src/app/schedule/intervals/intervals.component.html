@@ -1,0 +1,28 @@
+<div class="intervals">
+  <button md-raised-button (click)="showIntervals = !showIntervals">
+    {{getStateMessage()}} длительности пар
+  </button>
+  <div class="interval-list" *ngIf="showIntervals" [@enterAnimation]="show">
+    <div class="interval">
+      1. 09:00 — 10:35
+    </div>
+    <div class="interval">
+      2. 10:50 — 12:25
+    </div>
+    <div class="interval">
+      3. 12:40 — 14:15
+    </div>
+    <div class="interval">
+      4. 14:30 — 16:05
+    </div>
+    <div class="interval">
+      5. 16:20 — 17:55
+    </div>
+    <div class="interval">
+      6. 18:10 — 19:45
+    </div>
+    <div class="interval">
+      7. 20:00 — 21:35
+    </div>
+  </div>
+</div>

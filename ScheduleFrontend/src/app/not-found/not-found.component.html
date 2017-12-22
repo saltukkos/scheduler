@@ -1,0 +1,8 @@
+<iframe id="coubVideo" src="https://coub.com/embed/33a5c8y?muted=false&autostart=false&originalSize=false&startWithHD=false" allowfullscreen="true" frameborder="0" width="640" height="480"></iframe>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+  $(document).ready(function () {
+    var myCoub = document.getElementById('coubVideo').contentWindow;
+    myCoub.postMessage('play', '*');
+  });
+</script>
