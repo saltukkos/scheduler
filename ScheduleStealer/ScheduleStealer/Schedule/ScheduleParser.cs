@@ -66,7 +66,7 @@ namespace Scheduler.ScheduleStealer.Schedule
             if (innerText == null)
                 return null;
 
-            return innerText != "Нечетная";
+            return innerText == "Нечетная";
         }
     }
 }
