@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {environment} from "../../environments/environment";
-import {Lesson} from "./lesson";
-import {HttpClient} from "@angular/common/http";
+import {environment} from '../../environments/environment';
+import {Lesson} from './lesson';
+import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -16,24 +16,24 @@ export class ScheduleService {
   }
 
   groupByWeekDay(lessons: Lesson[]): Lesson[][] {
-    let groupedLessons = new Array<Lesson[]>(6);
+    const groupedLessons = new Array<Lesson[]>(6);
     let maxLessons = 0;
     for (let i = 0; i < 6; ++i) {
       groupedLessons[i] = [];
     }
-    for (let lesson of lessons) {
+    for (const lesson of lessons) {
       groupedLessons[lesson.WeekDay - 1].push(lesson);
       maxLessons = Math.max(maxLessons, lesson.Number - 1);
     }
-    groupedLessons.forEach(lessons => {
-      let missed = new Set<number>();
+    groupedLessons.forEach(lessons1 => {
+      const missed = new Set<number>();
       for (let i = 0; i <= maxLessons; ++i) {
         missed.add(i);
       }
-      for (let lesson of lessons) {
+      for (const lesson of lessons1) {
         missed.delete(lesson.Number - 1);
       }
-      missed.forEach(index => lessons.splice(index, 0, null))
+      missed.forEach(index => lessons1.splice(index, 0, null));
     });
     return groupedLessons;
   }

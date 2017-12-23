@@ -1,8 +1,8 @@
 import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {StudentService} from "./student.service";
-import {Student} from "./student";
-import {Group} from "./group";
-import {Router} from "@angular/router";
+import {StudentService} from './student.service';
+import {Student} from './student';
+import {Group} from './group';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-students-list',
@@ -20,8 +20,8 @@ export class StudentsListComponent implements OnInit, OnChanges {
   }
 
   private static groupByGroup(students: Student[]): Group[] {
-    let groups = new Map<string, Group>();
-    for (let student of students) {
+    const groups = new Map<string, Group>();
+    for (const student of students) {
       if (!groups.has(student.Group)) {
         groups.set(student.Group, new Group(student.Group));
       }
@@ -43,16 +43,18 @@ export class StudentsListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.selectedStudentName === undefined || this.groups === undefined) return;
+    if (this.selectedStudentName === undefined || this.groups === undefined) {
+      return;
+    }
     if ('selectedStudentName' in changes) {
       this.selectStudentByName(this.selectedStudentName);
     }
   }
 
   private selectStudentByName(name: string) {
-    for (let group of this.groups) {
-      for (let student of group.students) {
-        if (student.Name == name) {
+    for (const group of this.groups) {
+      for (const student of group.students) {
+        if (student.Name === name) {
           this.selectedStudent = student;
           return;
         }
@@ -66,7 +68,7 @@ export class StudentsListComponent implements OnInit, OnChanges {
   }
 
   getSelectedColor(student: Student) {
-    if (this.selectedStudent == student) {
+    if (this.selectedStudent === student) {
       return 'accent';
     }
     return '';

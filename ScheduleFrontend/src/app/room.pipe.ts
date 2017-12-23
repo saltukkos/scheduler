@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class RoomPipe implements PipeTransform {
 
   transform(room: string): any {
-    return room ? room.replace("Ауд. ", "").replace('Институт автоматики и электрометрии', 'ИАиЭ') : room;
+    return room ? room.replace('Ауд. ', '').replace('Институт автоматики и электрометрии', 'ИАиЭ') : room;
   }
 
 }

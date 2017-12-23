@@ -2,7 +2,7 @@
   <button mat-raised-button (click)="showIntervals = !showIntervals">
     {{getStateMessage()}} длительности пар
   </button>
-  <div class="interval-list" *ngIf="showIntervals" [@enterAnimation]="show">
+  <div class="interval-list" *ngIf="showIntervals" [@enterAnimation]="showIntervals">
     <div class="interval">
       1. 09:00 — 10:35
     </div>

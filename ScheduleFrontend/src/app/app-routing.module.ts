@@ -1,7 +1,7 @@
-import {Routes, RouterModule} from "@angular/router";
-import {NgModule} from "@angular/core";
-import {ScheduleComponent} from "./schedule/schedule.component";
-import {NotFoundComponent} from "./not-found/not-found.component";
+import {Routes, RouterModule} from '@angular/router';
+import {NgModule} from '@angular/core';
+import {ScheduleComponent} from './schedule/schedule.component';
+import {NotFoundComponent} from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/schedule', pathMatch: 'full' },
