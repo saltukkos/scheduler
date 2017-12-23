@@ -2,7 +2,7 @@
 <div class="groups">
   <div *ngFor="let group of groups">
     <h3>{{group.name}}</h3>
-    <button md-raised-button *ngFor="let student of group.students"
+    <button mat-raised-button *ngFor="let student of group.students"
             [color]="getSelectedColor(student)"
             (click)="selectStudent(student)">
       {{student.Name | firstWord}}

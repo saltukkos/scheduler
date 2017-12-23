@@ -1,5 +1,5 @@
 <div class="intervals">
-  <button md-raised-button (click)="showIntervals = !showIntervals">
+  <button mat-raised-button (click)="showIntervals = !showIntervals">
     {{getStateMessage()}} длительности пар
   </button>
   <div class="interval-list" *ngIf="showIntervals" [@enterAnimation]="show">

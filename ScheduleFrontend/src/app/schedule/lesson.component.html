@@ -1,13 +1,13 @@
 <div class="item">
   <span *ngIf="shownItem" class="item-info">
-    <span [class.lecture]="shownItem.IsLecture" class="subj-name" mdTooltip="{{shownItem.Subject}}">
+    <span [class.lecture]="shownItem.IsLecture" class="subj-name" matTooltip="{{shownItem.Subject}}">
       {{index + 1}}. {{shownItem.Subject}}
     </span>
     <span class="info">
       <span class="room">{{shownItem.Room | room}}</span>
       <span class="teacher" *ngIf="shownItem.Teacher"
-            mdTooltip="{{shownItem.Teacher}}"
-            [mdTooltipPosition]="'left'"></span>
+            matTooltip="{{shownItem.Teacher}}"
+            [matTooltipPosition]="'left'"></span>
     </span>
   </span>
   <span *ngIf="!shownItem">

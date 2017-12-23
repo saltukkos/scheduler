@@ -8,7 +8,7 @@
 </nav>
 <div class="schedule">
   <div class="loading" [class.hidden]="!loading">
-    <md-spinner *ngIf="loading" [@enterAnimation]></md-spinner>
+    <mat-spinner *ngIf="loading" [@enterAnimation]></mat-spinner>
   </div>
   <div *ngFor="let schedDay of currentLessons; let i = index" class="day">
     <span class="weekday">{{convertWeekdayToWord(i)}}</span>
