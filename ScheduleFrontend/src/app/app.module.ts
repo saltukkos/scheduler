@@ -11,7 +11,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { LessonComponent } from './schedule/lesson.component';
 import { RoomPipe } from './room.pipe';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MatTooltipModule, MatButtonModule, MatProgressSpinnerModule} from "@angular/material";
+import {MdTooltipModule, MdButtonModule, MdProgressSpinnerModule} from "@angular/material";
 import {FirstWordPipe} from "./first-word.pipe";
 import { FooterComponent } from './footer/footer.component';
 import {IntervalsComponent} from "./schedule/intervals/intervals.component";
@@ -35,9 +35,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTooltipModule,
-    MatButtonModule,
-    MatProgressSpinnerModule,
+    MdTooltipModule,
+    MdButtonModule,
+    MdProgressSpinnerModule,
     Ng2PageScrollModule
   ],
   providers: [StudentService, ScheduleService],
